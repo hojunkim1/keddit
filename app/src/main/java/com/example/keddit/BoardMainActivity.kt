@@ -4,36 +4,29 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
-import com.example.keddit.databinding.ActivityMainBinding
+import com.example.keddit.databinding.ActivityBoardMainBinding
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class BoardMainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityBoardMainBinding
     private lateinit var currentFragment: Fragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityBoardMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        fragmentController("login", add = false, animate = false)
+        fragmentController("board_main", add = false, animate = false)
     }
 
     fun fragmentController(name: String, add: Boolean, animate: Boolean) {
-
         when (name) {
-            "login" -> {
-                currentFragment = LoginFragment()
-            }
-            "join" -> {
-                currentFragment = JoinFragment()
-            }
-            "nickname" -> {
-                currentFragment = NicknameFragment()
+            "board_main" -> {
+                currentFragment = BoardMainFragment()
             }
         }
 
         val trans = supportFragmentManager.beginTransaction()
-        trans.replace(R.id.main_container, currentFragment)
+        trans.replace(R.id.board_main_container, currentFragment)
 
         if (add) {
             trans.addToBackStack(name)
