@@ -14,10 +14,7 @@ import com.example.keddit.databinding.FragmentBoardMainBinding
 
 class BoardMainFragment : Fragment() {
     private lateinit var binding: FragmentBoardMainBinding
-
-    val boardListData = arrayOf(
-        "전체글", "게시판1", "게시판2", "게시판3", "게시판4"
-    )
+    private val boardListData = arrayOf("전체글", "게시판1", "게시판2", "게시판3", "게시판4")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +36,11 @@ class BoardMainFragment : Fragment() {
                     boardListBuilder.setNegativeButton("취소", null)
                     boardListBuilder.setItems(boardListData, null)
                     boardListBuilder.show()
+                    true
+                }
+                R.id.board_main_menu_write -> {
+                    val act = activity as BoardMainActivity
+                    act.fragmentController("board_write", add = true, animate = true)
                     true
                 }
                 else -> false
@@ -81,7 +83,8 @@ class BoardMainFragment : Fragment() {
         inner class ViewHolderClass(boardMainRecyclerItemBinding: BoardMainRecyclerItemBinding) :
             RecyclerView.ViewHolder(boardMainRecyclerItemBinding.root), View.OnClickListener {
             override fun onClick(p0: View?) {
-                TODO("Not yet implemented")
+                val act = activity as BoardMainActivity
+                act.fragmentController("board_read", add = true, animate = true)
             }
         }
     }
