@@ -18,10 +18,6 @@ import kotlin.concurrent.thread
 class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -71,8 +67,7 @@ class LoginFragment : Fragment() {
             thread {
                 val client = OkHttpClient()
 
-                val ip = "172.31.45.57"
-                val site = "http://$ip/keddit-server/login_user.jsp"
+                val site = "http://172.31.45.57/keddit-server/login_user.jsp"
 
                 val builder = FormBody.Builder()
                 builder.add("user_id", loginId)

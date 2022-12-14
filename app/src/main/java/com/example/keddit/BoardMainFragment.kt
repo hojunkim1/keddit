@@ -16,10 +16,6 @@ class BoardMainFragment : Fragment() {
     private lateinit var binding: FragmentBoardMainBinding
     private val boardListData = arrayOf("전체글", "게시판1", "게시판2", "게시판3", "게시판4")
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

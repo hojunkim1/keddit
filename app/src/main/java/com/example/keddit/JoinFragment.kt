@@ -12,10 +12,6 @@ import com.example.keddit.databinding.FragmentJoinBinding
 class JoinFragment : Fragment() {
     private lateinit var binding: FragmentJoinBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

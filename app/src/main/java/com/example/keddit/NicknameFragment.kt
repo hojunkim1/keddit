@@ -17,10 +17,6 @@ import kotlin.concurrent.thread
 class NicknameFragment : Fragment() {
     private lateinit var binding: FragmentNicknameBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -46,15 +42,10 @@ class NicknameFragment : Fragment() {
 
             act.userNickname = nickname
 
-            // Log.d("test", act.userId)
-            // Log.d("test", act.userPw)
-            // Log.d("test", act.userNickname)
-
             thread {
                 val client = OkHttpClient()
 
-                val ip = "172.31.45.57"
-                val site = "http://$ip/keddit-server/join_user.jsp"
+                val site = "http://172.31.45.57/keddit-server/join_user.jsp"
 
                 val builder = FormBody.Builder()
                 builder.add("user_id", act.userId)

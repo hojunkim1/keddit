@@ -16,10 +16,6 @@ import com.example.keddit.databinding.FragmentBoardReadBinding
 class BoardReadFragment : Fragment() {
     private lateinit var binding: FragmentBoardReadBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
